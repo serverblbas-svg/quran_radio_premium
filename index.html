@@ -3,7 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ڕادیۆی قورئانی پیرۆز</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="ڕادیۆی قورئانی پیرۆز - گوێگرتن لە باشترین قورئانخوێنەکان و زیکرەکان بە کوالێتی بەرز. ١٨ ڕادیۆی جیاواز بۆ گوێگرتن لە قورئانی پیرۆز بە ڕاستەوخۆیی.">
+    <meta name="keywords" content="قورئان, رادیۆ, قورئانی پیرۆز, عەبدولباسیت, سودەیس, زیکر, تەفسیری قورئان, ماهر المعقلي, سعد الغامدي, عبدالباسط, عبدالرحمن السديس, قرآن, راديو, قرآن كريم, Quran Radio, Quran, Islamic Radio">
+    <meta name="author" content="Quran Radio">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1a5d3a">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ڕادیۆی قورئانی پیرۆز - ١٨ ڕادیۆی جیاواز">
+    <meta property="og:description" content="گوێگرتن لە باشترین قورئانخوێنەکان و زیکرەکان بە کوالێتی بەرز و ڕاستەوخۆیی">
+    <meta property="og:locale" content="ar_IQ">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ڕادیۆی قورئانی پیرۆز">
+    <meta name="twitter:description" content="گوێگرتن لە باشترین قورئانخوێنەکان و زیکرەکان بە کوالێتی بەرز">
+
+    <title>ڕادیۆی قورئانی پیرۆز - گوێگرتن لە قورئان بە ڕاستەوخۆیی</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
@@ -108,7 +128,7 @@
         /* Header */
         .header {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             position: relative;
         }
 
@@ -173,12 +193,91 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* GitHub Pages Uptime Badge */
+        .uptime-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(46, 139, 87, 0.15);
+            border: 1px solid rgba(46, 139, 87, 0.3);
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 13px;
+            color: #7dd87d;
+            margin-top: 16px;
+            animation: fadeInUp 0.8s ease 0.8s both;
+        }
+
+        .uptime-badge .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #00ff88;
+            border-radius: 50%;
+            box-shadow: 0 0 8px rgba(0, 255, 136, 0.6);
+            animation: uptimePulse 2s ease-in-out infinite;
+        }
+
+        @keyframes uptimePulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Search Box */
+        .search-container {
+            max-width: 500px;
+            margin: 30px auto 10px;
+            position: relative;
+            animation: fadeInUp 0.8s ease 0.7s both;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 14px 50px 14px 20px;
+            border-radius: 50px;
+            border: 1px solid var(--glass-border);
+            background: var(--glass);
+            color: var(--text);
+            font-family: inherit;
+            font-size: 15px;
+            outline: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .search-box::placeholder {
+            color: var(--text-muted);
+        }
+
+        .search-box:focus {
+            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.1);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 16px;
+            pointer-events: none;
+        }
+
+        .search-stats {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 13px;
+            margin-top: 10px;
+            min-height: 20px;
+        }
+
         /* Radio Grid */
         .radio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 24px;
-            margin-top: 40px;
+            margin-top: 30px;
         }
 
         .radio-card {
@@ -192,6 +291,10 @@
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             backdrop-filter: blur(10px);
             animation: fadeInUp 0.6s ease both;
+        }
+
+        .radio-card.hidden {
+            display: none;
         }
 
         .radio-card:nth-child(1) { animation-delay: 0.05s; }
@@ -584,7 +687,7 @@
         /* Footer */
         .footer {
             text-align: center;
-            padding: 40px 20px;
+            padding: 40px 20px 20px;
             color: var(--text-muted);
             font-size: 14px;
         }
@@ -594,6 +697,52 @@
             margin: 0 6px;
         }
 
+        .github-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 12px;
+            padding: 8px 20px;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 50px;
+            font-size: 13px;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .github-badge:hover {
+            border-color: var(--gold);
+            color: var(--gold-light);
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        .github-badge i {
+            font-size: 16px;
+        }
+
+        /* No results message */
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-muted);
+            font-size: 16px;
+            display: none;
+        }
+
+        .no-results i {
+            font-size: 48px;
+            color: var(--glass-border);
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .no-results.show {
+            display: block;
+            animation: fadeInUp 0.5s ease;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             h1 { font-size: 28px; }
@@ -601,12 +750,14 @@
             .player-bar { padding: 12px 16px; }
             .player-volume { display: none; }
             .player-art { width: 42px; height: 42px; }
+            .search-container { max-width: 100%; }
         }
 
         @media (min-width: 769px) and (max-width: 1024px) {
             .radio-grid { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
+<base target="_blank">
 </head>
 <body>
 
@@ -623,14 +774,38 @@
         <h1>📻 ڕادیۆی قورئانی پیرۆز</h1>
         <p class="subtitle">١٨ ڕادیۆی جیاواز بۆ گوێگرتن لە قورئانی پیرۆز و زیکرەکان</p>
         <div class="divider"></div>
+
+        <!-- GitHub Pages Uptime Badge -->
+        <div class="uptime-badge">
+            <span class="status-dot"></span>
+            <span>١٠٠٪ Uptime - هەمیشە بەردەستە لەسەر GitHub Pages</span>
+        </div>
+    </div>
+
+    <!-- Search Box -->
+    <div class="search-container">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" class="search-box" id="searchBox" placeholder="گەڕان بۆ ناوی قورئانخوێن..." autocomplete="off">
+        <div class="search-stats" id="searchStats"></div>
     </div>
 
     <div class="radio-grid" id="radioGrid">
         <!-- Cards will be generated by JS -->
     </div>
 
+    <div class="no-results" id="noResults">
+        <i class="fas fa-search"></i>
+        <div>هیچ ڕادیۆیەک نەدۆزرایەوە</div>
+        <div style="font-size: 14px; margin-top: 8px; opacity: 0.7">تکایە ناوێکی تر تاقی بکەرەوە</div>
+    </div>
+
     <div class="footer">
         <i class="fas fa-heart"></i> ڕادیۆی قورئانی پیرۆز <i class="fas fa-heart"></i>
+        <br>
+        <a href="#" class="github-badge" onclick="return false;">
+            <i class="fab fa-github"></i>
+            <span>Hosted on GitHub Pages - هەرگیز ناخەوێت</span>
+        </a>
         <br><span style="font-size: 12px; margin-top: 8px; display: block;">دەستخۆشی لە خوای گەورە</span>
     </div>
 </div>
@@ -701,55 +876,100 @@ const btnStop = document.getElementById('btnStop');
 const btnClose = document.getElementById('btnClose');
 const volumeSlider = document.getElementById('volumeSlider');
 const grid = document.getElementById('radioGrid');
+const searchBox = document.getElementById('searchBox');
+const searchStats = document.getElementById('searchStats');
+const noResults = document.getElementById('noResults');
 
 let currentStation = null;
 let isPlaying = false;
 
 // Generate cards
-stations.forEach((station, index) => {
-    const card = document.createElement('div');
-    card.className = 'radio-card';
-    card.dataset.index = index;
-    card.innerHTML = `
-        <div class="card-glow"></div>
-        <div class="card-content">
-            <div class="card-icon-wrapper">
-                <i class="fas ${station.icon}"></i>
-            </div>
-            <div class="card-title">${station.name}</div>
-            <div class="card-category">
-                <i class="fas fa-tag" style="font-size: 10px;"></i>
-                ${station.cat}
-            </div>
-            <button class="play-btn" data-index="${index}">
-                <span class="btn-text-play"><i class="fas fa-play" style="margin-left: 6px;"></i> گوێگرتن</span>
-                <div class="equalizer">
-                    <div class="eq-bar"></div>
-                    <div class="eq-bar"></div>
-                    <div class="eq-bar"></div>
-                    <div class="eq-bar"></div>
-                    <div class="eq-bar"></div>
-                </div>
-                <div class="spinner"></div>
-            </button>
-        </div>
-    `;
-    card.addEventListener('click', (e) => {
-        if (!e.target.closest('.play-btn')) {
-            const btn = card.querySelector('.play-btn');
-            btn.click();
-        }
-    });
-    grid.appendChild(card);
-});
+function renderCards(filterText = '') {
+    grid.innerHTML = '';
+    let visibleCount = 0;
 
-// Play button handlers
-document.querySelectorAll('.play-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const index = parseInt(btn.dataset.index);
-        playStation(index);
+    const filtered = stations.filter(s => 
+        s.name.toLowerCase().includes(filterText.toLowerCase()) ||
+        s.cat.toLowerCase().includes(filterText.toLowerCase())
+    );
+
+    filtered.forEach((station, index) => {
+        const originalIndex = stations.indexOf(station);
+        const card = document.createElement('div');
+        card.className = 'radio-card';
+        card.dataset.index = originalIndex;
+        if (currentStation === originalIndex) card.classList.add('active');
+
+        card.innerHTML = `
+            <div class="card-glow"></div>
+            <div class="card-content">
+                <div class="card-icon-wrapper">
+                    <i class="fas ${station.icon}"></i>
+                </div>
+                <div class="card-title">${station.name}</div>
+                <div class="card-category">
+                    <i class="fas fa-tag" style="font-size: 10px;"></i>
+                    ${station.cat}
+                </div>
+                <button class="play-btn ${currentStation === originalIndex && isPlaying ? 'playing' : ''}" data-index="${originalIndex}">
+                    <span class="btn-text-play">
+                        ${currentStation === originalIndex && isPlaying 
+                            ? '<i class="fas fa-pause" style="margin-left: 6px;"></i> ڕاگرتn' 
+                            : '<i class="fas fa-play" style="margin-left: 6px;"></i> گوێگرتن'}
+                    </span>
+                    <div class="equalizer">
+                        <div class="eq-bar"></div>
+                        <div class="eq-bar"></div>
+                        <div class="eq-bar"></div>
+                        <div class="eq-bar"></div>
+                        <div class="eq-bar"></div>
+                    </div>
+                    <div class="spinner"></div>
+                </button>
+            </div>
+        `;
+
+        card.addEventListener('click', (e) => {
+            if (!e.target.closest('.play-btn')) {
+                const btn = card.querySelector('.play-btn');
+                btn.click();
+            }
+        });
+
+        grid.appendChild(card);
+        visibleCount++;
     });
+
+    // Attach play button handlers
+    document.querySelectorAll('.play-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const index = parseInt(btn.dataset.index);
+            playStation(index);
+        });
+    });
+
+    // Update stats
+    if (filterText) {
+        searchStats.textContent = `${visibleCount} ڕادیۆ دۆزرایەوە لە ${stations.length}`;
+    } else {
+        searchStats.textContent = `${stations.length} ڕادیۆی بەردەستە`;
+    }
+
+    // Show/hide no results
+    if (visibleCount === 0) {
+        noResults.classList.add('show');
+    } else {
+        noResults.classList.remove('show');
+    }
+}
+
+// Initial render
+renderCards();
+
+// Search functionality
+searchBox.addEventListener('input', (e) => {
+    renderCards(e.target.value.trim());
 });
 
 function playStation(index) {
